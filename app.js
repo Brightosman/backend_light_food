@@ -40,4 +40,8 @@ if(process.env.NODE_ENV === 'PRODUCTION'){
 
 
 app.use(errorMiddleware);
+
+app.get('/', (req, res) => {
+    res.send("Backend Light Food")
+})
 module.exports = app;

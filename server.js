@@ -6,7 +6,6 @@ const cloudinary = require('cloudinary');
 
 require('dotenv').config({ path: 'backend_light_food/config/config.env'})
 
-const PORT = 4000
 
 // Handle Uncaught exceptions
 process.on('uncaughtException', err => {
