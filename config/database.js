@@ -4,7 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const connectDatabase = () => {
-    mongoose.connect("mongodb+srv://brightosman:Kh4HxqeQyZfmutz@cluster0.xzthr.mongodb.net/afro-shop2?retryWrites=true", {
+    mongoose.connect(process.env.DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
  }).then(con => {

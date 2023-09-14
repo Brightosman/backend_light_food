@@ -15,7 +15,7 @@ process.on('uncaughtException', err => {
 })
 
 // setting config file
-if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'backend_light_food/config/config.env'})
+if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'config/config.env'})
 
 //connect to Database 
 connectDatabase();
@@ -28,8 +28,8 @@ cloudinary.config({
 })
 
 
-const server = app.listen(4000, () => {
-    console.log(`listening on port: ${4000} in ${process.env.NODE_ENV} mode.`)
+const server = app.listen(process.env.PORT, () => {
+    console.log(`listening on port: ${process.env.PORT} in ${process.env.NODE_ENV} mode.`)
 })
 
 // Handle Unhandled Promise rejections
