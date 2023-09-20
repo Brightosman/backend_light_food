@@ -10,7 +10,7 @@ const cors = require('cors')
 const errorMiddleware = require('./middlewares/errors')
 
 //setting config file 
-if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'config/config.env'})
+if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'backend_light_food/config/config.env'})
 
 app.use(cors())
 app.use(express.json());
@@ -32,13 +32,13 @@ app.use('/api/v1', auth)
 app.use('/api/v1', payment)
 app.use('/api/v1', order)
 
-if(process.env.NODE_ENV === 'PRODUCTION'){
-    app.use(express.static(path.join(__dirname, '../frontend/build')))
+// if(process.env.NODE_ENV === 'PRODUCTION'){
+//     app.use(express.static(path.join(__dirname, '../frontend/build')))
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
-    })
-}
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
+//     })
+// }
 
 
 app.use(errorMiddleware);

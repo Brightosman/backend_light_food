@@ -15,7 +15,7 @@ process.on('uncaughtException', err => {
 })
 
 // setting config file
-if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'config/config.env'})
+if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'backend_light_food/config/config.env'})
 
 //connect to Database 
 connectDatabase();
