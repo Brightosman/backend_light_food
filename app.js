@@ -10,7 +10,7 @@ const cors = require('cors')
 const errorMiddleware = require('./middlewares/errors')
 
 // setting config file 
-if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'backend/config/config.env'})
+if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'backend_light_food/config/config.env'})
 
 app.use(cors())
 app.use(express.json());
