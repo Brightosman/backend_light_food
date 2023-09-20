@@ -4,8 +4,11 @@ const connectDatabase = require('./config/database')
 const dotenv = require('dotenv')
 const cloudinary = require('cloudinary');
 
+const cors = require('cors') 
+
 require('dotenv').config({ path: 'backend_light_food/config/config.env'})
 
+app.use(cors())
 
 // Handle Uncaught exceptions
 process.on('uncaughtException', err => {
