@@ -1,5 +1,6 @@
 const app = require('./app')
 const connectDatabase = require('./config/database')
+const cors = require('cors') 
 
 const dotenv = require('dotenv')
 const cloudinary = require('cloudinary');
