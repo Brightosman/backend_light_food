@@ -39,7 +39,7 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 //Get all products => /api/v1/products?keyword=word
 exports.getProducts = catchAsyncErrors(async (req, res, next) =>{
 
-     const resPerPage = 24;
+    const resPerPage = 12;
     const productsCount = await Product.countDocuments();
     const apiFeatures = new APIFeatures(Product.find(), req.query)
         .search()
@@ -47,6 +47,8 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) =>{
 
     let products = await apiFeatures.query;
     let filteredProductsCount = products.length;
+
+    return next(new ErrorHandler("Hello", 400))
  
     apiFeatures.pagination(resPerPage);
     products = await apiFeatures.query.clone();
